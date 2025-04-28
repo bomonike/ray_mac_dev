@@ -6,12 +6,15 @@ ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Set the time zone to America/Los_Angeles
-ENV TZ=America/Los_Angeles
+#ENV TZ=America/Los_Angeles
+ENV TZ=UTC  # Unix/Linux shell
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Preconfigure tzdata package to avoid interactive prompts
-RUN echo 'tzdata tzdata/Areas select America' | debconf-set-selections
-RUN echo 'tzdata tzdata/Zones/America select Los_Angeles' | debconf-set-selections
+#RUN echo 'tzdata tzdata/Areas select America' | debconf-set-selections
+#RUN echo 'tzdata tzdata/Zones/America select Los_Angeles' | debconf-set-selections
+RUN echo "tzdata tzdata/Areas select Etc" | debconf-set-selections
+RUN echo "tzdata tzdata/Zones/Etc select UTC" | debconf-set-selections
 
 # Update package list and install necessary system packages and developer tools
 RUN apt-get update && \
