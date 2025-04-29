@@ -190,11 +190,11 @@ conda env update --file env/environment.yml
 - Convenience: Automated scripts handle container setup, mounting, and entry.
 
 ## Limitations
-** - Not for Ray End-Users:**
+- **Not for Ray End-Users:**
 This setup is for developing Ray itself, not for running Ray-based applications in production.
-** - Requires Docker:**
+- **Requires Docker:**
 You must have Docker Desktop running on your Mac.
-** - Manual Build Steps:**
+- **Manual Build Steps:**
 You still need to clone Ray and run build commands inside the container.
-** - Large Image Size:**
+- **Large Image Size:**
 The Docker image is sizable, reflecting the complexity of Ray’s dependencies.
