@@ -1,14 +1,19 @@
 # ray_mac_dev
 
-Apache Ray containerized developer environment for Mac
+### Apache Ray containerized developer environment for Mac
+## What is This Repo For?
+This repository provides a containerized developer environment for building and developing Ray on Mac using Docker. It is designed to help Mac users set up a consistent, reproducible development environment for Ray, eliminating the need to manually install complex dependencies or manage Python environments locally.
 
+## What Is Ray (2025)?
+- Ray is an open-source, Python-native AI compute engine for scaling and orchestrating distributed workloads-including machine learning, data processing, model training, serving, and reinforcement learning-across laptops, clusters, and clouds.
+- Ray features a robust ecosystem of libraries (Ray Tune, Ray Serve, RLlib, Ray Data, etc.) for end-to-end AI/ML workflows, and can scale workloads seamlessly from a single machine to thousands of nodes and GPUs.
 
-## Install Docker for Mac
+## How Does This Repo Work?
+### Install Docker for Mac
 
 Install your favourite dev tools for Mac and Docker before proceeding.
 
-
-## Clone Apache Ray
+### Clone Apache Ray
 
 Follow the instructions [here](https://docs.ray.io/en/latest/ray-contribute/development.html#id1) and clone the ray project.
 
@@ -27,8 +32,7 @@ Resolving deltas: 100% (283276/283276), done.
 Updating files: 100% (8277/8277), done.
 ```
 
-
-## Build the Ray dev container
+### Build the Ray dev container
 
 Build the container image running below commands.
 
@@ -48,8 +52,7 @@ srinath.krishnamachari@srinath ray_mac_dev %
 
 ```
 
-
-## Run the Ray dev container
+### Run the Ray dev container
 
 To run the dev container, run the below command.
 
@@ -70,8 +73,7 @@ srinath.krishnamachari@srinath ray_mac_dev %
 
 ```
 
-
-## Enter the Ray dev container
+### Enter the Ray dev container
 
 To enter the dev container, run './devSetup.sh --run' or './devSetup.sh --exec bash'.
 
@@ -95,8 +97,7 @@ See "man sudo_root" for details.
 srinath_krishnamachari@docker-desktop$
 ```
 
-
-## Build Ray
+### Build Ray
 
 Follow the instructions [here](https://docs.ray.io/en/latest/ray-contribute/development.html#building-ray-on-linux-macos-full) and build the project. Note that the build commands need to be run inside the container.
 
@@ -171,11 +172,29 @@ Successfully installed ray
 
 ```
 
-
-## Updating Conda Packages
+### Updating Conda Packages
 
 Update packages in `env/environment.yml` file and run below command to pull in the new packages in your env.
 
 ```sh
 conda env update --file env/environment.yml
 ```
+
+## Who Should Use This Repo?
+- Ray contributors and advanced users on Mac who want to develop or build Ray from source in a clean, reproducible environment.
+- Anyone seeking to avoid “dependency hell” or the complexities of configuring a local build environment for Ray on macOS.
+
+## Benefits
+- Consistency: Ensures your development environment matches Ray’s Linux-based CI and production environments.
+- Isolation: Keeps your Mac system clean; all dependencies are inside the container.
+- Convenience: Automated scripts handle container setup, mounting, and entry.
+
+## Limitations
+** - Not for Ray End-Users:**
+This setup is for developing Ray itself, not for running Ray-based applications in production.
+** - Requires Docker:**
+You must have Docker Desktop running on your Mac.
+** - Manual Build Steps:**
+You still need to clone Ray and run build commands inside the container.
+** - Large Image Size:**
+The Docker image is sizable, reflecting the complexity of Ray’s dependencies.
