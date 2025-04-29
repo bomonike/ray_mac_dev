@@ -8,6 +8,33 @@ This repository provides a containerized developer environment for building and 
 - Ray is an open-source, Python-native AI compute engine for scaling and orchestrating distributed workloads-including machine learning, data processing, model training, serving, and reinforcement learning-across laptops, clusters, and clouds.
 - Ray features a robust ecosystem of libraries (Ray Tune, Ray Serve, RLlib, Ray Data, etc.) for end-to-end AI/ML workflows, and can scale workloads seamlessly from a single machine to thousands of nodes and GPUs.
 
+## Who Should Use This Repo?
+- **Ray contributors and advanced users on Mac** who want to develop or build Ray from source in a clean, reproducible environment.
+- **Anyone seeking to avoid “dependency hell”** or the complexities of configuring a local build environment for Ray on macOS.
+
+## Benefits
+- **Consistency:** Ensures your development environment matches Ray’s Linux-based CI and production environments.
+- **Isolation:** Keeps your Mac system clean; all dependencies are inside the container.
+- **Convenience:** Automated scripts handle container setup, mounting, and entry.
+
+## Limitations
+- **Not for Ray End-Users:**
+This setup is for developing Ray itself, not for running Ray-based applications in production.
+- **Requires Docker:**
+You must have Docker Desktop running on your Mac.
+- **Manual Build Steps:**
+You still need to clone Ray and run build commands inside the container.
+- **Large Image Size:**
+The Docker image is sizable, reflecting the complexity of Ray’s dependencies.
+
+## Should You Use It?
+### Use this repo if:
+- You are a Mac user contributing to or building Ray from source.
+- You want a reproducible, isolated environment for Ray development.
+### You don’t need it if:
+- You only want to use Ray (just install with pip install ray).
+- You’re on Linux or Windows (though the approach can be adapted).
+
 ## How Does This Repo Work?
 ### Install Docker for Mac
 
@@ -179,22 +206,10 @@ Update packages in `env/environment.yml` file and run below command to pull in t
 ```sh
 conda env update --file env/environment.yml
 ```
+## References:
+- https://www.anyscale.com/product/open-source/ray
+- https://www.ray.io/
+- https://docs.ray.io/en/latest/ray-overview/index.html
+- https://www.anyscale.com/glossary/what-is-ray
+- https://github.com/ray-project/ray
 
-## Who Should Use This Repo?
-- Ray contributors and advanced users on Mac who want to develop or build Ray from source in a clean, reproducible environment.
-- Anyone seeking to avoid “dependency hell” or the complexities of configuring a local build environment for Ray on macOS.
-
-## Benefits
-- Consistency: Ensures your development environment matches Ray’s Linux-based CI and production environments.
-- Isolation: Keeps your Mac system clean; all dependencies are inside the container.
-- Convenience: Automated scripts handle container setup, mounting, and entry.
-
-## Limitations
-- **Not for Ray End-Users:**
-This setup is for developing Ray itself, not for running Ray-based applications in production.
-- **Requires Docker:**
-You must have Docker Desktop running on your Mac.
-- **Manual Build Steps:**
-You still need to clone Ray and run build commands inside the container.
-- **Large Image Size:**
-The Docker image is sizable, reflecting the complexity of Ray’s dependencies.
