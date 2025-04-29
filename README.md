@@ -1,10 +1,10 @@
 # ray_mac_dev
 
-### Apache Ray containerized developer environment for Mac
+### ~~Apache~~ Ray containerized developer environment for Mac
 ## What is This Repo For?
 This repository provides a containerized developer environment for building and developing Ray on Mac using Docker. It is designed to help Mac users set up a consistent, reproducible development environment for Ray, eliminating the need to manually install complex dependencies or manage Python environments locally.
 
-## What Is Ray (2025)?
+## What Is Ray?
 - Ray is an open-source, Python-native AI compute engine for scaling and orchestrating distributed workloads-including machine learning, data processing, model training, serving, and reinforcement learning-across laptops, clusters, and clouds.
 - Ray features a robust ecosystem of libraries (Ray Tune, Ray Serve, RLlib, Ray Data, etc.) for end-to-end AI/ML workflows, and can scale workloads seamlessly from a single machine to thousands of nodes and GPUs.
 
